@@ -1,12 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import data from './data/testDots';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class Board extends React.Component {
+  render() {
+    const dotsData = data.dots;
+    const width = data.width;
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+    const dotsLayout = GetDotsLayout(dotsData, width);
+
+    return (
+      <table>
+        {dotsLayout.map((row, index) => (
+          <tr>
+            {row.map(dot => (
+              <td>{dot}</td>
+            ))}
+          </tr>
+        ))}
+      </table>
+    );
+  }
+}
+
+function GetDotsLayout(dotsDataFromJson, numberOfDotsPerRow) {
+  let doubleArray = new Array();
+
+  for (let i = 0; i < dotsDataFromJson.length; i += numberOfDotsPerRow) {
+    let rowData = dotsDataFromJson.slice(i, numberOfDotsPerRow);
+    doubleArray.push(rowData);
+
+    alert('one row');
+  }
+
+  return doubleArray;
+}
+
+// ========================================
+
+ReactDOM.render(<Board />, document.getElementById('root'));

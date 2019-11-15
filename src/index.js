@@ -2,15 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import data from './data/testDots';
+import Dot from './dot.js';
 
 const levelNodeJson = data;
 const levelData = JSON.parse(data.level_blob);
-
-class Dot extends React.Component {
-  render() {
-    return <div className='dot'>{this.props.dotType}</div>;
-  }
-}
 
 class Board extends React.Component {
   renderDots() {
@@ -31,8 +26,8 @@ class Board extends React.Component {
     );
   }
 
-  renderSingleDot(dotType) {
-    return <Dot dotType={dotType} />;
+  renderSingleDot(dotTypeData) {
+    return <Dot dotTypeString={dotTypeData} />;
   }
 
   render() {
@@ -42,6 +37,7 @@ class Board extends React.Component {
           <p>Gloal Level Number: {levelNodeJson.global_level_number}</p>
           <p>World Number: {levelData.world_number}</p>
           <p>Moves: {levelData.limiter_amount}</p>
+          <img src='./images/purpleDot.png' alt='' width='20' height='20' />
         </div>
         <div classname='BoardGrid'>{this.renderDots()}</div>
       </div>

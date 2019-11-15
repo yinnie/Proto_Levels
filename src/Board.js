@@ -35,9 +35,8 @@ class Board extends React.Component {
           <p>Gloal Level Number: {levelNodeJson.global_level_number}</p>
           <p>World Number: {levelData.world_number}</p>
           <p>Moves: {levelData.limiter_amount}</p>
-          <img src='./images/purpleDot.png' alt='' width='20' height='20' />
         </div>
-        <div classname='BoardGrid'>{this.renderDots(levelData)}</div>
+        <div>{this.renderDots(levelData)}</div>
       </div>
     );
   }

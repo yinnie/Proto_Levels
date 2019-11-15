@@ -11,7 +11,11 @@ const random = require('./images/randomDot.png');
 class Dot extends React.Component {
   render() {
     const dotImagePath = GetDotImagePath(this.props.dotTypeString);
-    return <img src={dotImagePath} alt='' width='20' height='20' />;
+    return (
+        <div className='dot'>
+            <img src={dotImagePath} alt='' width='20' height='20' />
+        </div>
+    );
   }
 }
 

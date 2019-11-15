@@ -6,7 +6,7 @@ body {
 .gridWrapper {
   display: grid;
   grid-gap: 30px;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   background-color: #fff;
   color: #444;
 }
@@ -17,4 +17,8 @@ body {
   border-radius: 5px;
   padding: 10px;
   font-size: 100%;
+}
+
+.dot {
+  padding: 4px;
 }

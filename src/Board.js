@@ -3,10 +3,9 @@ import './index.css';
 import Dot from './dot.js';
 
 class Board extends React.Component {
-
   constructor(props) {
     super(props);
-    this.data = '';
+    this.data = {};
   }
 
   renderDots(levelData) {

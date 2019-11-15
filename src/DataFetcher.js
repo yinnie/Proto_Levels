@@ -12,13 +12,16 @@ class DataFetcher extends React.Component {
 
   componentDidMount() {
     fetch('https://api.example.com/items')
-      .then(res => res.json())
+      .then(result => result.json())
       .then(
         result => {
           this.setState({
             isLoaded: true,
-            levelsData: result.items
+            levelsData: result
           });
+
+          // Callback on property method
+          this.props.onLoaded(result.levelsData);
         },
         error => {
           this.setState({
@@ -37,6 +40,7 @@ class DataFetcher extends React.Component {
       return <div>Loading puzzles...</div>;
     } else {
       return (
+        // TODO. Remove this??
         <ul>
           {items.map(item => (
             <li key={item.name}>

@@ -3,6 +3,12 @@ import './index.css';
 import Dot from './dot.js';
 
 class Board extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.data = '';
+  }
+
   renderDots(levelData) {
     const dotsOneD = levelData.dots;
     const numberDotsPerRow = levelData.width;

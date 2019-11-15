@@ -9,12 +9,17 @@ const green = require('./images/greenDot.png');
 const random = require('./images/randomDot.png');
 
 class Dot extends React.Component {
+  constructor(props) {
+    super(props);
+    this.dotTypeString = '';
+  }
+
   render() {
     const dotImagePath = GetDotImagePath(this.props.dotTypeString);
     return (
-        <div className='dot'>
-            <img src={dotImagePath} alt='' width='20' height='20' />
-        </div>
+      <div className='dot'>
+        <img src={dotImagePath} alt='' width='20' height='20' />
+      </div>
     );
   }
 }

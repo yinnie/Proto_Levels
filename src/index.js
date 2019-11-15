@@ -13,20 +13,23 @@ import board8 from './data/Level_8';
 import board9 from './data/Level_9';
 import board10 from './data/Level_10';
 
+const isLoadTestLocalData = true;
+
 function GetCatalogueData() {
-  // TODO. Replace with fetching data from database
-  return [
-    board1,
-    board2,
-    board3,
-    board4,
-    board5,
-    board6,
-    board7,
-    board8,
-    board9,
-    board10
-  ];
+  if (isLoadTestLocalData) {
+    return [
+      board1,
+      board2,
+      board3,
+      board4,
+      board5,
+      board6,
+      board7,
+      board8,
+      board9,
+      board10
+    ];
+  }
 }
 
 class Catalogue extends React.Component {

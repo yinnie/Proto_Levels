@@ -1,63 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import data from './data/testDots';
-import Dot from './dot.js';
+import Board from './Board';
+import board1 from './data/Level_1';
+import board2 from './data/Level_2';
+import board3 from './data/Level_3';
 
-const levelNodeJson = data;
-const levelData = JSON.parse(data.level_blob);
+function GetCatalogueData() {
+  // TODO. Replace with fetching data from database
+  return [board1, board2, board3];
+}
 
-class Board extends React.Component {
-  renderDots() {
-    const dotsOneD = levelData.dots;
-    const numberDotsPerRow = levelData.width;
-    const dotsTwoD = GetDotsInTwoDimensionalArray(dotsOneD, numberDotsPerRow);
-
-    return <table>{dotsTwoD.map((row, index) => this.renderRow(row))}</table>;
-  }
-
-  renderRow(rowData) {
+class Catalogue extends React.Component {
+  renderBoard(boardData) {
     return (
-      <tr>
-        {rowData.map(dot => (
-          <td>{this.renderSingleDot(dot)}</td>
-        ))}
-      </tr>
+      <div>
+        <Board data={boardData} />
+      </div>
     );
   }
 
-  renderSingleDot(dotTypeData) {
-    return <Dot dotTypeString={dotTypeData} />;
-  }
-
   render() {
+    const allBoards = GetCatalogueData();
+
     return (
-      <div className='Board'>
-        <div className='BoardHeading'>
-          <p>Gloal Level Number: {levelNodeJson.global_level_number}</p>
-          <p>World Number: {levelData.world_number}</p>
-          <p>Moves: {levelData.limiter_amount}</p>
-          <img src='./images/purpleDot.png' alt='' width='20' height='20' />
-        </div>
-        <div classname='BoardGrid'>{this.renderDots()}</div>
+      <div className='gridWrapper'>
+        {allBoards.map(board => (
+          <div>{this.renderBoard(board)}</div>
+        ))}
       </div>
     );
   }
 }
 
-function GetDotsInTwoDimensionalArray(dotsDataFromJson, numberOfDotsPerRow) {
-  let twoDimensionArray = [];
-  let indexInArray = 0;
-
-  for (let i = 0; i < dotsDataFromJson.length; i += numberOfDotsPerRow) {
-    let rowData = dotsDataFromJson.slice(i, i + numberOfDotsPerRow);
-    twoDimensionArray[indexInArray] = rowData;
-    indexInArray++;
-  }
-
-  return twoDimensionArray;
-}
-
 // ========================================
 
-ReactDOM.render(<Board />, document.getElementById('root'));
+ReactDOM.render(<Catalogue />, document.getElementById('root'));

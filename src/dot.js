@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 
 const purple = require('./images/purpleDot.png');
@@ -31,7 +30,7 @@ function GetDotImagePath(dotTypeString) {
     case 'n:x':
       return random;
     default:
-      return '';
+      return random;
   }
 }
 

@@ -1,6 +1,0 @@
-{
-  "global_level_number": 1,
-  "level_blob": "{\"index\":0,\"world_number\":0,\"type\":0,\"star_difficulty\":2,\"level_difficulty\":0,\"limiter_amount\":20,\"dots_to_spawn\":[\"n:1\",\"n:2\",\"n:4\"],\"board_mechanics_to_spawn\":[],\"width\":4,\"height\":4,\"dots\":[\"n:1\",\"n:4\",\"n:1\",\"n:4\",\"n:1\",\"n:4\",\"n:1\",\"n:4\",\"n:1\",\"n:4\",\"n:1\",\"n:4\",\"n:2\",\"n:2\",\"n:2\",\"n:2\"],\"tiles\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"],\"board_mechanics\":[],\"overlays\":[],\"top_tutorial_text\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\"],\"bottom_tutorial_text\":[],\"stars_list\":[],\"goals_list\":[{\"goal\":\"n:1\",\"amount\":\"15\"},{\"goal\":\"n:2\",\"amount\":\"15\"},{\"goal\":\"n:4\",\"amount\":\"15\"}],\"supply_crates_to_exclude\":[],\"attempts_before_rebalance\":-1,\"moves_to_add_for_rebalance\":0,\"chest_rank\":0,\"chest_tier_rewards\":[]}",
-  "level_checksum": "F5CF5320CC7D5D286944BE724E682F74",
-  "level_blob_version": "Level_Type"
-}
